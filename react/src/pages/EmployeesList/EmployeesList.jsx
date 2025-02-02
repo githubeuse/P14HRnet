@@ -19,7 +19,8 @@ const EmployeesList = () => {
       <Header />
       <h2>Employees List</h2>
       {employees.map((employee, index) => (
-        <li key={index}>{employee.firstName}</li>
+        <li key={index}>{employee.firstName}{employee.lastName}</li>
+
       ))}
       <button onClick={handleClear}> Effacer</button>
       <Table />

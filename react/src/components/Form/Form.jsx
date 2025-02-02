@@ -5,15 +5,20 @@ import { addEmployee } from '../../store/features/employees/employeesSlice';
 
 const Form = ({ onSubmit }) => {
     const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const dispatch = useDispatch();
 
-    const handleChange = (e) => {
+    const handleChangeFirstName = (e) => {
         setFirstName(e.target.value);
+    }
+
+    const handleChangeLastName = (e) => {
+        setLastName(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addEmployee({ firstName }));
+        dispatch(addEmployee({ firstName, lastName }));
         onSubmit();
     };
     
@@ -23,8 +28,13 @@ const Form = ({ onSubmit }) => {
                 type="text"
                 name="firstName"
                 value={firstName}
-                onChange={handleChange}
-                placeholder="First Name"
+                onChange={handleChangeFirstName}
+            />
+                        <input
+                type="text"
+                name="lastName"
+                value={lastName}
+                onChange={handleChangeLastName}
             />
             <button type="submit">Save</button>
         </form>
