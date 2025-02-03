@@ -14,11 +14,15 @@ const EmployeesList = () => {
   };
 
   const columns = [
-    { name: 'First Name', selector: row => row.firstName, sortable: true },
-    { name: 'Last Name', selector: row => row.lastName, sortable: true },
-    { name: 'Street', selector: row => row.street, sortable: true },
-    { name: 'City', selector: row => row.city, sortable: true },
-    { name: 'Zip Code', selector: row => row.zipCode, sortable: true }
+    { name: 'First Name', selector: row => row.firstName, sortable: true }, //1
+    { name: 'Last Name', selector: row => row.lastName, sortable: true }, //2
+    //3 start date
+    { name: 'Department', selector: row => row.department?.value, sortable: true }, //4
+    // date of birth
+    { name: 'Street', selector: row => row.street, sortable: true }, //6
+    { name: 'City', selector: row => row.city, sortable: true }, //7
+    { name: 'State', selector: row => row.state?.abbreviation, sortable: true }, //8
+    { name: 'Zip Code', selector: row => row.zipCode, sortable: true }, //9
   ]
 
   return (
