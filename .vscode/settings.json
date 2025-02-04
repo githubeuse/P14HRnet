@@ -3,6 +3,66 @@
         {
             "filePath": "HRnet react\\src\\main.js",
             "group": "Default"
+        },
+        {
+            "filePath": "HRnet-react\\src\\App.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "HRnet-react\\src\\components\\Modal\\Modal.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "HRnet-react\\src\\store\\store.js",
+            "group": "Default"
+        },
+        {
+            "filePath": "HRnet-react\\src\\main.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "HRnet-react\\src\\store\\middleware\\localStorageMiddleware.js",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\store\\features\\employees\\employeesSlice.js",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\App.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\main.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\store\\middleware\\localStorageMiddleware.js",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\store\\store.js",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\components\\Modal\\Modal.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\pages\\EmployeesList\\EmployeesList.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\components\\Form\\Form.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\components\\Table\\Table.jsx",
+            "group": "Default"
+        },
+        {
+            "filePath": "react\\src\\components\\DropdownMenu\\DropdownMenu.jsx",
+            "group": "Default"
         }
     ]
 }

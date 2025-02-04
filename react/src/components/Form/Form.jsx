@@ -6,7 +6,10 @@ import { addEmployee } from "../../store/features/employees/employeesSlice";
 
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import { departmentOptions } from "../../constants/departmentOptions";
-import {stateOptions} from "../../constants/stateOptions";
+import { stateOptions } from "../../constants/stateOptions";
+
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
+import {format} from 'date-fns';
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -17,6 +20,8 @@ const Form = ({ onSubmit }) => {
     zipCode: "",
     department: departmentOptions[0],
     state: stateOptions[0],
+    dateOfBirth: new Date(),
+    startDate: new Date(),
   });
   const dispatch = useDispatch();
 
@@ -35,9 +40,21 @@ const Form = ({ onSubmit }) => {
     });
   };
 
+  const handleDateChange = (selectedDate, name) => {
+    setFormData({
+      ...formData,
+      [name]: selectedDate,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addEmployee(formData));
+    const formattedData = {
+      ...formData,
+      dateOfBirth: format(formData.dateOfBirth, "yyyy-MM-dd"), // Convertir en chaîne de caractères
+      startDate: format(formData.startDate, "yyyy-MM-dd"),
+    }
+    dispatch(addEmployee(formattedData));
     onSubmit();
   };
 
@@ -60,6 +77,24 @@ const Form = ({ onSubmit }) => {
         name="lastName"
         value={formData.lastName}
         onChange={handleChange}
+      />
+      {/* 3 */}
+      <label htmlFor="dateOfBirth">Date of Birth</label>
+      <CustomDatePicker
+        selected={formData.dateOfBirth}
+        onChange={(date) => handleDateChange(date, "dateOfBirth")}
+        id="dateOfBirth"
+        name="dateOfBirth"
+        locale="fr"
+      />
+      {/* 4 */}
+      <label htmlFor="startDate">Start Date</label>
+      <CustomDatePicker
+        selected={formData.startDate}
+        onChange={(date) => handleDateChange(date, "startDate")}
+        id="startDate"
+        name="startDate"
+        locale="fr"
       />
       <fieldset>
         <legend>Address</legend>

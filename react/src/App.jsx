@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Form from "./components/Form/Form"
-import DatePicker from "./components/DatePicker/DatePicker";
 import Modal from "./components/Modal/Modal";
 
 import "./App.css";
@@ -23,7 +22,6 @@ function App() {
       <Link to="/employeesList">View Current Employees</Link>
       <Form onSubmit={() => setIsModalOpen(true)} />
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-      <DatePicker />
       <h2>Documentation</h2>
       <h2>Rapport de performance</h2>
       <h2>Test</h2>
