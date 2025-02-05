@@ -10,10 +10,12 @@ const EmployeesList = () => {
   const employees = useSelector((state) => state.employees);
   const dispatch = useDispatch();
 
+  // Fonction pour effacer tous les employés
   const handleClear = () => {
     dispatch(clearEmployees());
   };
 
+   // Colonnes pour le tableau des employés
   const columns = [
     { name: "First Name", selector: (row) => row.firstName, sortable: true }, //1
     { name: "Last Name", selector: (row) => row.lastName, sortable: true }, //2

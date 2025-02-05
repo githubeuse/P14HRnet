@@ -1,3 +1,9 @@
+/**
+ * Liste des états pour les options du formulaire.
+ * Chaque option contient la valeur, le label et l'abréviation de l'état.
+ */
+
+
 export const stateOptions = [
   { value: "Alabama", label: "Alabama", abbreviation: "AL" },
   { value: "Alaska", label: "Alaska", abbreviation: "AK" },

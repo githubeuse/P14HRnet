@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import logo_hrnet from "../../assets/logo_hrnet.jpg";
 import "./Header.css";
 
+/**
+ * Le composant Header affiche l'en-tête de l'application avec le logo et le titre.
+ * Il inclut également un lien vers la page d'accueil.
+ */
+
 const Header = () => {
   return (
     <div className="headerDiv">

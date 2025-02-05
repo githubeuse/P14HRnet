@@ -9,7 +9,7 @@ import { departmentOptions } from "../../constants/departmentOptions";
 import { stateOptions } from "../../constants/stateOptions";
 
 import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
-import {format} from 'date-fns';
+import { format } from "date-fns";
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -25,6 +25,7 @@ const Form = ({ onSubmit }) => {
   });
   const dispatch = useDispatch();
 
+  // Gestion des changements dans les champs de texte
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -33,6 +34,7 @@ const Form = ({ onSubmit }) => {
     });
   };
 
+  // Gestion des changements dans les dropdowns
   const handleDropdownChange = (selectedOption, name) => {
     setFormData({
       ...formData,
@@ -40,6 +42,7 @@ const Form = ({ onSubmit }) => {
     });
   };
 
+  // Gestion des changements dans les sélecteurs de date
   const handleDateChange = (selectedDate, name) => {
     setFormData({
       ...formData,
@@ -47,13 +50,14 @@ const Form = ({ onSubmit }) => {
     });
   };
 
+  // Gestion de la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
     const formattedData = {
       ...formData,
       dateOfBirth: format(formData.dateOfBirth, "yyyy-MM-dd"), // Convertir en chaîne de caractères
       startDate: format(formData.startDate, "yyyy-MM-dd"),
-    }
+    };
     dispatch(addEmployee(formattedData));
     onSubmit();
   };
